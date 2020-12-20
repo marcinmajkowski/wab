@@ -1,0 +1,76 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Messenger</title>
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script>
+        function AppLoader() {
+
+        }
+
+        AppLoader.ondone = function() {};
+
+        AppLoader.count = 0;
+
+        AppLoader.start = function() {
+          AppLoader.count += 1;
+        }
+
+        AppLoader.stop = function() {
+          AppLoader.count -= 1;
+          if (AppLoader.count === 0) {
+            document.documentElement.classList.add('app-loader-done');
+            AppLoader.ondone();
+          }
+        }
+
+        AppLoader.start();
+        window.onload = function() {
+          AppLoader.stop();
+        }
+
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+      WebFont.load({
+        google: {
+          families: ['Noto Sans']
+        },
+        loading: function() {
+          AppLoader.start();
+        },
+        active: function() {
+          // FIXME this event fires too soon (span measurements are off)
+          window.setTimeout(function () {
+            AppLoader.stop();
+          }, 500)
+        },
+        inactive: function() {
+          AppLoader.stop();
+        }
+      });
+    </script>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="messenger">
+        <!-- messages goes here -->
+        <form autocomplete="off" class="message-form" onsubmit="onMessageFormSubmit(event)">
+            <input type="text" name="message" placeholder="Aa" class="message-input">
+            <button class="message-form-submit" type="submit"></button>
+        </form>
+    </div>
+</div>
+
+<script src="js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+html, body {
+    background-color: black;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+body {
+    visibility: hidden;
+}
+
+.app-loader-done body {
+    visibility: visible;
+}
+
+.container {
+    max-width: 40rem;
+    margin: auto;
+    padding: 0 0.5rem;
+}
+
+.messenger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.message {
+    padding: 0.5rem 0.75rem;
+    margin-top: 0.5rem;
+    border-radius: 1rem;
+    line-height: 1.15;
+    min-height: 1.15em;
+}
+
+.message--left {
+    background-color: #e4e6eb;
+    color: #050505;
+    align-self: flex-start;
+}
+
+.message--right {
+    background-color: #0084ff;
+    color: #ffffff;
+    align-self: flex-end;
+    margin-left: 1rem;
+}
+
+.message-form {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+    align-self: flex-end;
+}
+
+.message-input {
+    padding: 0.45rem 0.75rem;
+    border-radius: 1rem;
+    line-height: 1.25;
+    color: #ffffff;
+    background-color: transparent;
+    border: 2px solid #e4e6eb;
+}
+
+.message-input:focus {
+    outline: none;
+}
+
+.message-form-submit {
+    background-color: #0084ff;
+    border-radius: 50%;
+    border: none;
+    margin-left: 0.5rem;
+    width: 2.15rem;
+    height: 2.15rem;
+}
