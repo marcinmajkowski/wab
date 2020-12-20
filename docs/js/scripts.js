@@ -17,7 +17,8 @@ function updateMessageWidth(message) {
   message.style.width = null
   var span = message.querySelector('.message > span')
   if (span) {
-    message.style.width = span.getBoundingClientRect().width + 'px'
+    // Math.ceil is necessary here for iOS Safari
+    message.style.width = Math.ceil(span.getBoundingClientRect().width) + 'px'
   }
 }
 
